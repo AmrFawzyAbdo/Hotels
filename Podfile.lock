@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.2.2)
+  - Kingfisher (5.0.1)
+  - SwiftKeychainWrapper (4.0.1)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher (~> 5.0.1)
+  - SwiftKeychainWrapper
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - SwiftKeychainWrapper
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: fd6e4d5d244b1338343f8ff56804d6c11e334083
+
+COCOAPODS: 1.9.3

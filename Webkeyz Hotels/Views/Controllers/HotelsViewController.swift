@@ -10,22 +10,31 @@ import Kingfisher
 
 class HotelsViewController: UIViewController {
     
+    //MARK:- Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK:- Variables
+    //Contains array of Hotel data
     var hotelsData = [Hotel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         getHotels()
+
     }
     
-    
+    //MARK:- Calling API that retrive hotels data
+
     func getHotels(){
+        //Make a toast
         self.view.makeToastActivity(.center)
         APIClient().GetHotels { (res) in
             self.view.hideToastActivity()
             print(res)
             self.hotelsData = res
+            
+            // Reload tableView
             self.tableView.reloadData()
         } onError: { (error) in
             self.view.hideToastActivity()
@@ -36,6 +45,8 @@ class HotelsViewController: UIViewController {
     
 }
 
+
+//MARK:- UITableViewDataSource and, UITableViewDelegate
 
 extension HotelsViewController: UITableViewDataSource, UITableViewDelegate{
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -70,16 +81,5 @@ extension HotelsViewController: UITableViewDataSource, UITableViewDelegate{
 }
 
 
-extension UIImageView {
-    func setImage(with urlString: String){
-        guard let url = URL.init(string: urlString) else {
-            return
-        }
-        let resource = ImageResource(downloadURL: url, cacheKey: urlString)
-        var kf = self.kf
-        kf.indicatorType = .activity
-        self.kf.setImage(with: resource)
-    }
-}
 
 

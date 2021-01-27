@@ -20,6 +20,8 @@
 		EDFBB23D25C04626001CC31F /* Hotels.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBB23C25C04626001CC31F /* Hotels.swift */; };
 		EDFBB24125C04F93001CC31F /* HotelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBB24025C04F93001CC31F /* HotelDetailsViewController.swift */; };
 		EDFBB24525C07DB7001CC31F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBB24425C07DB7001CC31F /* BaseView.swift */; };
+		EDFBB30A25C19DA4001CC31F /* ImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBB30925C19DA4001CC31F /* ImageExtensions.swift */; };
+		EDFBB31125C1AB00001CC31F /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFBB31025C1AB00001CC31F /* NetworkReachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		EDFBB23C25C04626001CC31F /* Hotels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotels.swift; sourceTree = "<group>"; };
 		EDFBB24025C04F93001CC31F /* HotelDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailsViewController.swift; sourceTree = "<group>"; };
 		EDFBB24425C07DB7001CC31F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		EDFBB30925C19DA4001CC31F /* ImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtensions.swift; sourceTree = "<group>"; };
+		EDFBB31025C1AB00001CC31F /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 			children = (
 				EDFBB22625C04251001CC31F /* Network */,
 				EDFBB22725C04278001CC31F /* Model */,
+				EDFBB22B25C042AB001CC31F /* Extinsions */,
 				EDFBB22825C04285001CC31F /* Views */,
 				EDFBB21125C04245001CC31F /* AppDelegate.swift */,
 				EDFBB21325C04245001CC31F /* SceneDelegate.swift */,
@@ -101,6 +106,7 @@
 			children = (
 				EDFBB23625C04547001CC31F /* APIClient.swift */,
 				EDFBB23925C04553001CC31F /* Constants.swift */,
+				EDFBB31025C1AB00001CC31F /* NetworkReachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -118,7 +124,6 @@
 			children = (
 				EDFBB22A25C042A5001CC31F /* Controllers */,
 				EDFBB22925C04291001CC31F /* TableCells */,
-				EDFBB22B25C042AB001CC31F /* Extinsions */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				EDFBB24425C07DB7001CC31F /* BaseView.swift */,
+				EDFBB30925C19DA4001CC31F /* ImageExtensions.swift */,
 			);
 			path = Extinsions;
 			sourceTree = "<group>";
@@ -271,7 +277,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFBB31125C1AB00001CC31F /* NetworkReachability.swift in Sources */,
 				EDFBB24125C04F93001CC31F /* HotelDetailsViewController.swift in Sources */,
+				EDFBB30A25C19DA4001CC31F /* ImageExtensions.swift in Sources */,
 				EDFBB21625C04245001CC31F /* HotelsViewController.swift in Sources */,
 				EDFBB21225C04245001CC31F /* AppDelegate.swift in Sources */,
 				EDFBB23D25C04626001CC31F /* Hotels.swift in Sources */,

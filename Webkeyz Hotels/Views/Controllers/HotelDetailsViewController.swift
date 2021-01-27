@@ -10,37 +10,47 @@ import MapKit
 import CoreLocation
 
 class HotelDetailsViewController: UIViewController, CLLocationManagerDelegate {
+    
+    //MARK:- Outlets
     @IBOutlet weak var hotelImage: UIImageView!
     @IBOutlet weak var hotelName: UILabel!
     @IBOutlet weak var hotelAddress: UILabel!
     @IBOutlet weak var actualPrice: UILabel!
     @IBOutlet weak var normalPrice: UILabel!
-    
     @IBOutlet weak var mapView: MKMapView!
     
+    //MARK:- Variables and constants
     var data : Hotel?
-    
     let locationManager = CLLocationManager()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        oultetsData()
+        getHotelLocation()
+       
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        hotelImage.addGestureRecognizer(tap)
+        
+        // set corner radius for map view
+        mapView.layer.cornerRadius = 20
+
+    }
+    
+    //MARK:- Setting data for each outlet
+    func oultetsData(){
         hotelName.text = data?.summary?.hotelName
         hotelImage.setImage(with: data?.image.first?.url ?? "")
         actualPrice.text = "\(data?.summary?.lowRate ?? 0)"
         normalPrice.text = "\(data?.summary?.highRate ?? 0)"
         hotelAddress.text = data?.location?.address ?? ""
         
+        //Round bottom corners of hotel image
         hotelImage.roundCorners(with: [.layerMinXMaxYCorner,.layerMaxXMaxYCorner], radius: 20)
-        
-        getHotelLocation()
-       
-        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
-        hotelImage.addGestureRecognizer(tap)
-        
     }
     
+    //MARK:- Handle tapping image
     @IBAction func imageTapped(_ sender: UITapGestureRecognizer) {
         let imageView = sender.view as! UIImageView
         let newImageView = UIImageView(image: imageView.image)
@@ -62,9 +72,12 @@ class HotelDetailsViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
+    //MARK:- Map with location of the hotel
     func getHotelLocation(){
-        mapView.mapType = MKMapType.satellite
+        // Map type
+        mapView.mapType = MKMapType.standard
         
+        // Set lat and, Lon
         let location = CLLocationCoordinate2D(latitude: (data?.location?.latitude)! ,longitude: (data?.location?.longitude)!)
         
         // Foucs on map

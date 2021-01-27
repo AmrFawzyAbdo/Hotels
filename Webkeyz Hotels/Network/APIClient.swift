@@ -14,8 +14,17 @@ class APIClient {
     
     func GetHotels(onSuccess: @escaping ([Hotel]) -> Void, onError: @escaping (_ error: String)-> Void) {
         
+        // Cashing
+        var request = URLRequest(url: URL(string: Constants.ProductionServer.baseURL)!)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        AF.request(URL(string: Constants.ProductionServer.baseURL)!, method: .get,encoding: JSONEncoding.default).responseData {
+        if !NetworkReachability.isConnectedToNetwork() {
+            request.cachePolicy = .returnCacheDataDontLoad
+        }
+        
+        //ALamofire request
+        AF.request(request).responseData {
             response in
             switch response.result {
             case .success(let jsonData):
